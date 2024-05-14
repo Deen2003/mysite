@@ -38,20 +38,22 @@ window.onload = oppstart;
         
     //Constructs the song
     scaryMusic = new Audio('scary_music.mp3');
+    function playOST() {
+        scaryMusic.play();
+    }
 
     //Clicking the button calls this function. This function just calls 2 other functions
     function totalBullshit() {
         titleBullshit();
         btnBullshit();
-        scaryMusic.play();
-        
+        setInterval(playOST, 1);
     }
 
 
     //Function which produces a random number, multiplied by the array length and then floor function. This will give indeces that will get random outputs from the array.
     function titleBullshit() {
         document.getElementById("background").innerHTML = "body {background-image: url('Place_of_worship.png');background-repeat: no-repeat;background-size: cover;};";
-        document.getElementByID("title").innerHTML = "Place of Worship";
+        document.getElementById("title").innerHTML = "Place of Worship";
         let randomPhrase = Math.floor(Math.random()*phrases.length);
         document.getElementById("mogus").innerHTML = phrases.at(randomPhrase);
         setTimeout(titleBullshit, 500);
@@ -88,7 +90,7 @@ window.onload = oppstart;
 </head>
 <body>
     <!--Button put at the center with onclick attribute to call the function-->
-    <h1 id="title"></h1>
+    <center><h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" id="title"></h1></center>
     <center>
         <br id="break">
         <button onclick=totalBullshit(); id="btnID">CLICK ME!</button>
