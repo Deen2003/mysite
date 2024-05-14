@@ -52,8 +52,8 @@ window.onload = oppstart;
 
     //Function which produces a random number, multiplied by the array length and then floor function. This will give indeces that will get random outputs from the array.
     function titleBullshit() {
-        document.getElementById("background").innerHTML = "body {background-image: url('Place_of_worship.png');background-repeat: no-repeat;background-size: cover;};";
-        document.getElementById("title").innerHTML = "Place of Worship";
+        document.getElementById("background").innerHTML = "body {background-image: url('Place_of_worship.png');background-repeat: repeat;background-size: cover;};";
+        document.getElementById("title").innerHTML = "Knapper Kuk og Karsk<br><h3>Grunnlagt av Storm Nilas Holseth</h3>";
         let randomPhrase = Math.floor(Math.random()*phrases.length);
         document.getElementById("mogus").innerHTML = phrases.at(randomPhrase);
         setTimeout(titleBullshit, 500);
