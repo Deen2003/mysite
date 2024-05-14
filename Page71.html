@@ -51,7 +51,7 @@ window.onload = oppstart;
     //Function which produces a random number, multiplied by the array length and then floor function. This will give indeces that will get random outputs from the array.
     function titleBullshit() {
         document.getElementById("background").innerHTML = "body {background-image: url('Place_of_worship.png');background-repeat: no-repeat;background-size: cover;};";
-        document.getElementByID("title").innerHTML = "<h1>Place of Worship</h1>";
+        document.getElementByID("title").innerHTML = "Place of Worship";
         let randomPhrase = Math.floor(Math.random()*phrases.length);
         document.getElementById("mogus").innerHTML = phrases.at(randomPhrase);
         setTimeout(titleBullshit, 500);
@@ -88,7 +88,8 @@ window.onload = oppstart;
 </head>
 <body>
     <!--Button put at the center with onclick attribute to call the function-->
-    <center id="title">
+    <h1 id="title">></h1>
+    <center
         <br id="break">
         <button onclick=totalBullshit(); id="btnID">CLICK ME!</button>
     </center>
