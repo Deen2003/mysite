@@ -3,49 +3,18 @@
 <head>
     <meta charset="UTF-16">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="mogus">‎</title>
+    <title id="mogus">Kuk og Karsk</title>
     <script>
 
-window.onload = oppstart;
-
-    function oppstart() {
-
-        //List of phrases for the button to show
-        phrases = [
-        "Run",
-        "Smile",
-        "Hello",
-        "What's up?",
-        "Sit down",
-        "Likelihood",
-        "Incorporated",
-        "Go upwards",
-        "Use a bike",
-        "Waste the floor",
-        "Never",
-        "Gonna",
-        "Give",
-        "You",
-        "Up",
-    ]
-        //A variable that is a string of most characters on a keyboard.
-        symbols = 
-        "abcdefghijklmnopqrstuvwxyzæøåQWERTYUIOPÅASDFGHJKLØÆZXCVBNM1234567890!#¤%&/()=?`{}][€$£@|§<>*'^¨~,.-;:_.";
-    }
-
-        //Z is the length of the random string for the button. It will increase in the function but starts at 0
-        z = 0;
-        
     //Constructs the song
-    scaryMusic = new Audio('scary_music.mp3');
+    scaryMusic = new Audio('kukogkarsktheme.mp3');
     function playOST() {
         scaryMusic.play();
     }
 
-    //Clicking the button calls this function. This function just calls 2 other functions
+    //Clicking the button calls these functions.
     function totalBullshit() {
         titleBullshit();
-        btnBullshit();
         setInterval(playOST, 1);
     }
 
@@ -54,39 +23,19 @@ window.onload = oppstart;
     function titleBullshit() {
         document.getElementById("background").innerHTML = "body {background-image: url('Place_of_worship.png');background-repeat: repeat;background-size: cover;};";
         document.getElementById("title").innerHTML = "Knapper Kuk og Karsk<br><h3>Grunnlagt av Storm Nilas Holseth</h3>";
-        let randomPhrase = Math.floor(Math.random()*phrases.length);
-        document.getElementById("mogus").innerHTML = phrases.at(randomPhrase);
-        setTimeout(titleBullshit, 500);
-
+        document.getElementById("btnID").outerHTML = "";
     }
 
 
-    function btnBullshit() {
-
-        //Removes onclick attribute from button by setting the outerHTML to a new html tag, with new font and removing the onclick to make the button useless.
-        document.getElementById("btnID").outerHTML = "<button id='btnID'; style='font-family: monospace;''></button>"
-            //Resetting the button text since it's going to be random every time
-            buttonText = "";
-
-            for (let i = 0; i < z; i++) {
-        
-                //Calculates a random nr that will be the index for selecting random character
-                randomSymbolIndex = Math.floor(Math.random()*symbols.length);
-        
-                //Takes the random nummber and uses it as an index to get a random character from the symbols string.
-                randomSymbol = symbols.charAt(randomSymbolIndex);
-
-                //Adds new random letter to the string of the button
-                buttonText = buttonText + randomSymbol;
-            }
-        
-        document.getElementById("btnID").innerHTML = buttonText;
-        z++;
-        setTimeout(btnBullshit, 80);      
-    } 
     
     </script>
-    <style id="background"></style>
+    <style id="background">
+
+        #btnID {
+            font-size: 50px;
+        }
+
+    </style>
 </head>
 <body>
     <!--Button put at the center with onclick attribute to call the function-->
